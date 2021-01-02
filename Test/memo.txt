@@ -1,0 +1,11 @@
+drop table simple;
+
+create table simple(
+	num number primary key,
+	name varchar2(10),
+	addr varchar2(10)
+);
+
+insert into simple values(1,'kim','서울');
+commit;
+select * from simple;
