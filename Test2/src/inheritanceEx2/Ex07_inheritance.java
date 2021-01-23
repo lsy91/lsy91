@@ -1,4 +1,4 @@
-package inheritanceEx3;
+package inheritanceEx2;
 
 class Product {
 	String code;
