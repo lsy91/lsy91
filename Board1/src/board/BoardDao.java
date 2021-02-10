@@ -32,6 +32,13 @@ public class BoardDao {
 		}
 	}
 	
+	public static BoardDao getInstance() {
+		if(instance == null) {
+			instance = new BoardDao();
+		}
+		return instance;
+	}
+	
 	public ArrayList<BoardBean> getArticles(int start, int end) {
 		ArrayList<BoardBean> lists = new ArrayList<BoardBean>();
 		
