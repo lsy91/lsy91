@@ -1,4 +1,4 @@
-package greedy;
+package level1;
 
 import java.util.Arrays;
 

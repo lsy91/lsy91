@@ -1,4 +1,4 @@
-package greedy;
+package level1;
 
 public class No1 {
 
