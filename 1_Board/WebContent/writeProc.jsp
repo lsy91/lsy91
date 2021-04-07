@@ -6,7 +6,7 @@
     writeProc.jsp <br>
     
     <%
-    	request.setCharacterEncoding("UFT-8");
+    	request.setCharacterEncoding("UTF-8");
     %>
     
     <jsp:useBean id="bean" class="board.BoardBean"/>

@@ -39,29 +39,29 @@
     	System.out.println("content.jsp " + num + "," + ref + "," + re_step + "," + re_level);
     %>
     
-    <table border="1" width="500" bgcolor="<%=value_c%>">
+    <table border="1" width="500" bgcolor="<%=bodyback_c%>">
     	<tr height="30">
     		<td align="center" width="125" bgcolor="<%=value_c %>">글번호</td>
-    		<td align="center" width="125" bgcolor="<%=bean.getNum()%>"></td>
+    		<td align="center" width="125" ><%=bean.getNum()%></td>
     		<td align="center" width="125" bgcolor="<%=value_c %>">조회수</td>
-    		<td align="center" width="125" bgcolor="<%=bean.getReadcount() %>"></td>
+    		<td align="center" width="125" ><%=bean.getReadcount() %></td>
     	</tr>
     	
     	<tr height="30">
     		<td align="center" width="125" bgcolor="<%=value_c %>">작성자</td>
-    		<td align="center" width="125" bgcolor="<%=bean.getWriter()%>"></td>
+    		<td align="center" width="125" ><%=bean.getWriter()%></td>
     		<td align="center" width="125" bgcolor="<%=value_c %>">작성일</td>
-    		<td align="center" width="125" bgcolor="<%=sdf.format(bean.getReg_date())%>"></td>  
+    		<td align="center" width="125" ><%=sdf.format(bean.getReg_date())%></td>  
     	</tr>
     	
     	<tr height="30">
     		<td align="center" width="125" bgcolor="<%=value_c %>">글제목</td>
-    		<td align="center" width="125" bgcolor="<%=bean.getSubject()%>"></td>
+    		<td align="center" width="375" ><%=bean.getSubject()%></td>
     	</tr>
     	
     	<tr height="30">
     		<td align="center" width="125" bgcolor="<%=value_c %>">글내용</td>
-    		<td align="center" width="125" bgcolor="<%=bean.getContent()%>"></td>
+    		<td align="center" width="375" colspan="3"><%=bean.getContent()%></td>
     	</tr>
     	
     	<tr height="30">
