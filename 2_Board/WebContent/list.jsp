@@ -34,9 +34,9 @@
     	
     	BoardDao dao = BoardDao.getInstance();
     	
-    	int count = dao.getArticleCount();
+    	int count = dao.getArticleCount(); 
     	
-    	ArrayList<BoardBean> lists = dao.getArticles(startRow,endRow);
+    	ArrayList<BoardBean> lists = dao.getArticles(startRow,endRow); 
     	
     	number = count - (currentPage - 1) * pageSize;
     %>
