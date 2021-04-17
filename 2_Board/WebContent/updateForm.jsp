@@ -10,7 +10,7 @@
     	int pageNum = Integer.parseInt(request.getParameter("pageNum"));
     	
     	BoardDao dao = BoardDao.getInstance();
-    	BoardBean bean = dao.updateGetArticle(num);
+    	BoardBean bean = dao.updateGetArticle(num); 
     %>
     
     <style type="text/css">
