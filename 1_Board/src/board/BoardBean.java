@@ -18,7 +18,7 @@ public class BoardBean {
 	private String ip;
 	
 	public BoardBean() {
-		super();
+		
 	}
 
 	public BoardBean(int num, String writer, String email, String subject, String passwd, Timestamp reg_date,
