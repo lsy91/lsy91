@@ -4,7 +4,7 @@
     writeForm.jsp <br>
     
     <style type="text/css">
-    	body{
+    	body {
     		text-align : center;
     	}
     	
@@ -18,14 +18,13 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="script.js"></script>
     
-    <%@ include file="color.jsp" %>
-    
-    <body bgcolor="<%=bodyback_c%>"> 
+    <%@ include file="color.jsp"%>
+    <body bgcolor="<%=bodyback_c%>">
     	<b>글쓰기</b> <br>
     	<form method="post" name="writeForm" action="writeProc.jsp">
     		<table border="1" width="450" bgcolor="<%=bodyback_c %>">
     			<tr>
-    				<td colspan="2" align="right" bgcolor="<%=value_c %>">
+    				<td colspan="2" align="right" bgcolor="<%=value_c%>">
     					<a href="list.jsp">글목록</a>
     				</td>
     			</tr>
@@ -54,7 +53,7 @@
     			<tr>
     				<td width="100" bgcolor="<%=value_c %>" align="center">내용</td>
     				<td width="350">
-    					<textarea name="centent" id="ct" rows="15" cols="50">내용입니다.</textarea>
+    					<textarea name="content" id="ct" rows="15" cols="50">내용입니다.</textarea>
     				</td>
     			</tr>
     			
@@ -71,7 +70,7 @@
     					<input type="reset" value="다시 작성">
     					<input type="button" value="목록보기" onClick="location.href='list.jsp'">
     				</td>
-    			</tr> 
+    			</tr>
     		</table>
     	</form>
     </body>
