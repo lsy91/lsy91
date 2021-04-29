@@ -332,5 +332,53 @@ public class BoardDao {
 
 		return cnt;
 	}
+	
+	public BoardBean getArticle(int num) {
+		
+		BoardBean bean = null;
+		
+		String sql2 = "update board set readcount = readcount+1 where num=?";
+		String sql = "select * from board where num=?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql2);
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				bean = new BoardBean();
+				
+				bean.setNum(rs.getInt("num"));
+				bean.setWriter(rs.getString("writer"));
+				bean.setEmail(rs.getString("email"));
+				bean.setSubject(rs.getString("subject"));
+				bean.setPasswd(rs.getString("passwd"));
+				bean.setReg_date(rs.getTimestamp("reg_date"));
+				bean.setReadcount(rs.getInt("readcount"));
+				bean.setRef(rs.getInt("ref"));
+				bean.setRe_step(rs.getInt("re_step"));
+				bean.setRe_level(rs.getInt("re_level"));
+				bean.setContent(rs.getString("content"));
+				bean.setIp(rs.getString("ip"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(rs!=null)
+					rs.close();
+				if(pstmt!=null)
+					pstmt.close();
+			} catch(SQLException e) {
+				
+			}
+		}
+		
+		return bean;
+	}
 
 }
