@@ -61,7 +61,7 @@ list.jsp <br>
 					<c:if test="${board.relevel > 0 }">
 						<c:set var="wid" value="${board.relevel * 20 }"/>
 						<img src="resources/images/level.gif" width="${wid }" height="16">
-						<img src="resources/images/re.gif">
+						<img src="resources/images/re.gif"> 
 					</c:if>
 					
 					<a href="content.bd?num=${board.num }&pageNumber=${pageInfo.pageNumber}">${board.subject }</a>
