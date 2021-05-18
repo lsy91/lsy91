@@ -4,5 +4,71 @@
 	  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="board.BoardBean">
-
+	
+	<select id="GetTotalCount" resultType="int">
+		select count(*) from board
+		<if test="whatColumn == 'writer'">
+			where writer like #{keyword}
+		</if>
+		<if test="whatColumn == 'subject'">
+			where subject like #{keyword}
+		</if>
+	</select>
+	
+	<select id="GetDataList" resultType="MyBoard">
+		select num, writer, email, subject, passwd, reg_date, readcount, ref,
+		re_step, re_level, content, ip
+		from (select rownum as rank, num, writer, email, subject, passwd,
+		reg_date, readcount, ref, re_step, re_level, content, ip
+		from (select num, writer, email, subject, passwd, reg_date, readcount,
+		ref, re_step, re_level, content, ip
+		from board order by ref desc, re_step asc))
+		
+		<if test="whatColumn == 'writer'">
+			where writer like #{keyword}
+		</if>
+		<if test="whatColumn == 'subject'">
+			where subject like #{keyword}
+		</if>
+	</select>
+	
+	<insert id="WriteBoard">
+		insert into 
+		board(num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content,ip) 
+		values(board_seq.nextval, #{writer}, #{email}, #{subject}, #{passwd}, sysdate, board_seq.currval, 0, 0, #{content}, #{ip})
+	</insert>
+	
+	<select id="GetData" resultType="MyBoard">
+		select * from board
+		where num = #{num}
+	</select>
+	
+	<update id="UpreadCount">
+		update board set readCount = readCount + 1
+		where num = #{num}
+	</update>
+	
+	<update id="UpdateBoard">
+		update board set writer=#{writer}, subject=#{subject}, email=#{email}, content=#{content}
+		where num=#{num} and passwd=#{passwd}
+	</update>
+	
+	<delete id="DeleteArticle">
+		delete from board where num=#{num} and passwd=#{passwd}
+	</delete>
+	
+	<select id="GetArticleCount" resultType="int">
+		select count(*) as cnt
+		from board
+	</select>
+	
+	<update id="UpdateRestep">
+		update board set re_step = re_step + 1
+		where ref = #{ref} and re_step > #{restep}
+	</update>
+	
+	<insert id="InsertReply">
+		insert into board(num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content,ip)
+		values(board_seq.nextval,#{writer},#{email},#{subject},#{passwd},sysdate,#{ref},#{restep},#{relevel},#{content},#{ip})
+	</insert>
 </mapper>
