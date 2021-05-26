@@ -2,3 +2,8 @@
     pageEncoding="UTF-8"%>
 
     main.jsp <br>
+    
+    <%
+    	String viewPage = request.getContextPath() + "/list.bd";
+    	response.sendRedirect(viewPage);
+    %>
