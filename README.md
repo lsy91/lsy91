@@ -1,4 +1,4 @@
-### Hi there 👋
+### 안녕하세요 개발자 이수용입니다. 👋
 
 <!--
 **lsy91/lsy91** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
