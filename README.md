@@ -1,4 +1,4 @@
-### 안녕하세요 개발자 이수용입니다. 👋
+### 안녕하세요 안드로이드 주니어 개발자 이수용입니다. 👋
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Flsy91)](https://hits.seeyoufarm.com)
 <!--
